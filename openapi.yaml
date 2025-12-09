@@ -1,0 +1,89 @@
+openapi: 3.0.4
+info:
+  title: TOTP Generator
+  description: TOTP Generator creates time-based one-time passwords compatible with authenticator apps using standard TOTP algorithms.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/totpgenerator:
+    post:
+      summary: Generate TOTP Token
+      description: TOTP Generator creates time-based one-time passwords compatible with authenticator apps using standard TOTP algorithms.
+      operationId: totpgenerator
+      parameters: []
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  token: '889707'
+                  digits: 6
+                  period: 30
+                  timeRemaining: 22
+                  expiresAt: 2025-11-19T21:25:30.0000000Z
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                secret:
+                  type: string
+                  description: Base32-encoded shared secret
+                  example: JBSWY3DPEHPK3PXP
+                digits:
+                  type: number
+                  description: Number of digits in token (6-8)
+                  default: '6'
+                  example: 6
+                period:
+                  type: number
+                  description: Time period in seconds (1-300)
+                  default: '30'
+                  example: 30
+              required:
+              - secret
+              example:
+                secret: JBSWY3DPEHPK3PXP
+                digits: 6
+                period: 30
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
