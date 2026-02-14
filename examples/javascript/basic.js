@@ -9,24 +9,15 @@ const API_KEY = process.env.APIVERVE_API_KEY || 'YOUR_API_KEY_HERE';
 const API_URL = 'https://api.apiverve.com/v1/totpgenerator';
 
 /**
- * Make a POST request to the TOTP Generator API
+ * Make a GET request to the TOTP Generator API
  */
 async function callTOTPGeneratorAPI() {
   try {
-    // Request body
-    const requestBody &#x3D; {
-    &quot;secret&quot;: &quot;JBSWY3DPEHPK3PXP&quot;,
-    &quot;digits&quot;: 6,
-    &quot;period&quot;: 30
-};
-
     const response = await fetch(API_URL, {
-      method: 'POST',
+      method: 'GET',
       headers: {
-        'x-api-key': API_KEY,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(requestBody)
+        'x-api-key': API_KEY
+      }
     });
 
     // Check if response is successful
