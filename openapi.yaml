@@ -1,23 +1,25 @@
 openapi: 3.0.4
 info:
   title: TOTP Generator
-  description: TOTP Generator creates time-based one-time passwords compatible with authenticator apps using standard TOTP algorithms.
+  description: >-
+    TOTP Generator creates time-based one-time passwords compatible with
+    authenticator apps using standard TOTP algorithms.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/totpgenerator:
     post:
       summary: Generate TOTP Token
-      description: TOTP Generator creates time-based one-time passwords compatible with authenticator apps using standard TOTP algorithms.
+      description: Generate time-based one-time password
       operationId: totpgenerator
       parameters: []
       responses:
@@ -35,23 +37,23 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
-                  token: '889707'
+                  token: '935324'
                   digits: 6
                   period: 30
-                  timeRemaining: 22
-                  expiresAt: 2025-11-19T21:25:30.0000000Z
+                  timeRemaining: 25
+                  expiresAt: '2025-12-16T22:31:00Z'
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
       requestBody:
         required: true
         content:
@@ -62,23 +64,14 @@ paths:
                 secret:
                   type: string
                   description: Base32-encoded shared secret
-                  example: JBSWY3DPEHPK3PXP
                 digits:
-                  type: number
-                  description: Number of digits in token (6-8)
-                  default: '6'
-                  example: 6
+                  type: integer
+                  description: Number of digits in token
                 period:
-                  type: number
-                  description: Time period in seconds (1-300)
-                  default: '30'
-                  example: 30
+                  type: integer
+                  description: Time period in seconds
               required:
-              - secret
-              example:
-                secret: JBSWY3DPEHPK3PXP
-                digits: 6
-                period: 30
+                - secret
 components:
   securitySchemes:
     api_key:
@@ -86,4 +79,8 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
+sampleRequest:
+  secret: JBSWY3DPEHPK3PXP
+  digits: 6
+  period: 30
