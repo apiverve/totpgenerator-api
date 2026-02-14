@@ -12,14 +12,8 @@ public class BasicExample {
         TOTPGeneratorAPIClient client = new TOTPGeneratorAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Request body
-            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
-        parameters.put(&quot;secret&quot;, &quot;JBSWY3DPEHPK3PXP&quot;);
-        parameters.put(&quot;digits&quot;, 6);
-        parameters.put(&quot;period&quot;, 30);
-
-            // Execute the API request
-            APIResponse response = client.execute(parameters);
+            // Execute the API request (no parameters required)
+            APIResponse response = client.execute(null);
 
             // Check if the request was successful
             if (response.isSuccess()) {
