@@ -20,7 +20,7 @@ namespace APIVerve.Examples
         private static readonly string API_URL = "https://api.apiverve.com/v1/totpgenerator";
 
         /// <summary>
-        /// Make a POST request to the TOTP Generator API
+        /// Make a GET request to the TOTP Generator API
         /// </summary>
         static async Task<JsonDocument> CallTOTPGeneratorAPI()
         {
@@ -29,13 +29,7 @@ namespace APIVerve.Examples
                 using var client = new HttpClient();
                 client.DefaultRequestHeaders.Add("x-api-key", API_KEY);
 
-                // Request body
-                var requestBody &#x3D; new { secret &#x3D; &quot;JBSWY3DPEHPK3PXP&quot;, digits &#x3D; 6, period &#x3D; 30 };
-
-                var jsonContent = JsonSerializer.Serialize(requestBody);
-                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
-
-                var response = await client.PostAsync(API_URL, content);
+                var response = await client.GetAsync(API_URL);
 
                 // Check if response is successful
                 response.EnsureSuccessStatusCode();
