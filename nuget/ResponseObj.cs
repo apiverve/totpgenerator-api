@@ -30,7 +30,6 @@ namespace APIVerve.API.TOTPGenerator
     public partial class Data
     {
         [JsonProperty("token")]
-        [JsonConverter(typeof(ParseStringConverter))]
         public long Token { get; set; }
 
         [JsonProperty("digits")]
