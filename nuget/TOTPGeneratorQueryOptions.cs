@@ -12,21 +12,18 @@ namespace APIVerve.API.TOTPGenerator
     {
         /// <summary>
         /// Base32-encoded shared secret
-        /// Example: JBSWY3DPEHPK3PXP
         /// </summary>
         [JsonProperty("secret")]
         public string Secret { get; set; }
 
         /// <summary>
-        /// Number of digits in token (6-8)
-        /// Example: 6
+        /// Number of digits in token
         /// </summary>
         [JsonProperty("digits")]
         public string Digits { get; set; }
 
         /// <summary>
-        /// Time period in seconds (1-300)
-        /// Example: 30
+        /// Time period in seconds
         /// </summary>
         [JsonProperty("period")]
         public string Period { get; set; }
