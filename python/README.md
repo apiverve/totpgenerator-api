@@ -44,7 +44,11 @@ from apiverve_totpgenerator.apiClient import TotpgeneratorAPIClient
 # Initialize the client with your APIVerve API key
 api = TotpgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "secret": "JBSWY3DPEHPK3PXP", "digits": 6, "period": 30 }
+query = {
+    "secret": "JBSWY3DPEHPK3PXP",
+    "digits": 6,
+    "period": 30
+}
 
 try:
     # Make the API call
@@ -82,7 +86,11 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "secret": "JBSWY3DPEHPK3PXP", "digits": 6, "period": 30 }
+query = {
+    "secret": "JBSWY3DPEHPK3PXP",
+    "digits": 6,
+    "period": 30
+}
 ```
 
 ###### Simple Request
@@ -124,7 +132,11 @@ from apiverve_totpgenerator.apiClient import TotpgeneratorAPIClient, Totpgenerat
 
 api = TotpgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "secret": "JBSWY3DPEHPK3PXP", "digits": 6, "period": 30 }
+query = {
+    "secret": "JBSWY3DPEHPK3PXP",
+    "digits": 6,
+    "period": 30
+}
 
 try:
     result = api.execute(query)
@@ -145,7 +157,11 @@ from apiverve_totpgenerator.apiClient import TotpgeneratorAPIClient, Totpgenerat
 
 api = TotpgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "secret": "JBSWY3DPEHPK3PXP", "digits": 6, "period": 30 }
+query = {
+    "secret": "JBSWY3DPEHPK3PXP",
+    "digits": 6,
+    "period": 30
+}
 
 try:
     result = api.execute(query)
@@ -179,7 +195,11 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_totpgenerator.apiClient import TotpgeneratorAPIClient, TotpgeneratorAPIClientError
 
-query = { "secret": "JBSWY3DPEHPK3PXP", "digits": 6, "period": 30 }
+query = {
+    "secret": "JBSWY3DPEHPK3PXP",
+    "digits": 6,
+    "period": 30
+}
 
 # Using context manager ensures proper cleanup
 with TotpgeneratorAPIClient("[YOUR_API_KEY]") as api:
@@ -205,7 +225,11 @@ from apiverve_totpgenerator.apiClient import TotpgeneratorAPIClient
 # Enable debug mode
 api = TotpgeneratorAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "secret": "JBSWY3DPEHPK3PXP", "digits": 6, "period": 30 }
+query = {
+    "secret": "JBSWY3DPEHPK3PXP",
+    "digits": 6,
+    "period": 30
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -220,8 +244,13 @@ from apiverve_totpgenerator.apiClient import TotpgeneratorAPIClient
 
 api = TotpgeneratorAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "secret": "JBSWY3DPEHPK3PXP",
+    "digits": 6,
+    "period": 30
+}
+
 try:
-    query = { "secret": "JBSWY3DPEHPK3PXP", "digits": 6, "period": 30 }
     result = api.execute(query)
     print(result)
 finally:
