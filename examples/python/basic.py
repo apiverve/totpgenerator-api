@@ -14,14 +14,22 @@ API_URL = 'https://api.apiverve.com/v1/totpgenerator'
 
 def call_totpgenerator_api():
     """
-    Make a GET request to the TOTP Generator API
+    Make a POST request to the TOTP Generator API
     """
     try:
+        # Request body
+        request_body &#x3D; {
+    &#x27;secret&#x27;: &#x27;JBSWY3DPEHPK3PXP&#x27;,
+    &#x27;digits&#x27;: 6,
+    &#x27;period&#x27;: 30
+}
+
         headers = {
-            'x-api-key': API_KEY
+            'x-api-key': API_KEY,
+            'Content-Type': 'application/json'
         }
 
-        response = requests.get(API_URL, headers=headers)
+        response = requests.post(API_URL, headers=headers, json=request_body)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
