@@ -128,11 +128,11 @@ async function makeRequest() {
   "status": "ok",
   "error": null,
   "data": {
-    "token": "889707",
+    "token": "935324",
     "digits": 6,
     "period": 30,
-    "timeRemaining": 22,
-    "expiresAt": "2025-11-19T21:25:30Z"
+    "timeRemaining": 25,
+    "expiresAt": "2025-12-16T22:31:00Z"
   }
 }
 ```
