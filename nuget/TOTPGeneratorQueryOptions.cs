@@ -20,12 +20,12 @@ namespace APIVerve.API.TOTPGenerator
         /// Number of digits in token
         /// </summary>
         [JsonProperty("digits")]
-        public string Digits { get; set; }
+        public int? Digits { get; set; }
 
         /// <summary>
         /// Time period in seconds
         /// </summary>
         [JsonProperty("period")]
-        public string Period { get; set; }
+        public int? Period { get; set; }
     }
 }
