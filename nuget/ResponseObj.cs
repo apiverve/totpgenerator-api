@@ -25,23 +25,38 @@ namespace APIVerve.API.TOTPGenerator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("token")]
-        public long Token { get; set; }
+        public long? Token { get; set; }
 
         [JsonProperty("digits")]
-        public long Digits { get; set; }
+        public long? Digits { get; set; }
 
         [JsonProperty("period")]
-        public long Period { get; set; }
+        public long? Period { get; set; }
 
         [JsonProperty("timeRemaining")]
-        public long TimeRemaining { get; set; }
+        public long? TimeRemaining { get; set; }
 
         [JsonProperty("expiresAt")]
-        public DateTimeOffset ExpiresAt { get; set; }
+        public DateTimeOffset? ExpiresAt { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
