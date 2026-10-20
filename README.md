@@ -1,13 +1,13 @@
-# [TOTP Generator API](https://apiverve.com/marketplace/totpgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [TOTP Generator API](https://apiverve.com/marketplace/totpgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
 TOTP Generator creates time-based one-time passwords compatible with authenticator apps using standard TOTP algorithms.
 
 The TOTP Generator API provides a simple, reliable way to integrate totp generator functionality into your applications. Built for developers who need production-ready totp generator capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/totpgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/totpgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/totpgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/totpgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-POST-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -171,7 +171,7 @@ go get github.com/apiverve/totpgenerator-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [TOTP Generator API](https://apiverve.com/marketplace/totpgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [TOTP Generator API](https://apiverve.com/marketplace/totpgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/totpgenerator](https://docs.apiverve.com/ref/totpgenerator)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -201,11 +201,32 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the TOTP Generator API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "token": "935324",
+    "digits": 6,
+    "period": 30,
+    "timeRemaining": 25,
+    "expiresAt": "2025-12-16T22:31:00Z"
+  }
 }
 ```
 
@@ -213,7 +234,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [TOTP Generator API](https://apiverve.com/marketplace/totpgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [TOTP Generator API](https://apiverve.com/marketplace/totpgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

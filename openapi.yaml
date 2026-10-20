@@ -18,7 +18,7 @@ servers:
 paths:
   /v1/totpgenerator:
     post:
-      summary: Generate TOTP Token
+      summary: TOTP Generator
       description: Generate time-based one-time password
       operationId: totpgenerator
       parameters: []
