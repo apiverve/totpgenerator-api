@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/totpgenerator",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "TOTP Generator creates time-based one-time passwords compatible with authenticator apps using standard TOTP algorithms.",
   "main": "index.js",
   "types": "index.d.ts",
