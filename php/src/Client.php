@@ -36,7 +36,9 @@ class Client
     private const VALIDATION_RULES = [
         'secret' => ['type' => 'string', 'required' => true],
         'digits' => ['type' => 'integer', 'required' => false, 'min' => 6, 'max' => 8],
-        'period' => ['type' => 'integer', 'required' => false, 'min' => 1, 'max' => 300]
+        'period' => ['type' => 'integer', 'required' => false, 'min' => 1, 'max' => 300],
+        'algorithm' => ['type' => 'string', 'required' => false],
+        'time' => ['type' => 'integer', 'required' => false, 'min' => 0]
     ];
 
     /**
