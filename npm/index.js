@@ -30,7 +30,7 @@ class totpgeneratorWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/totpgenerator';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"secret":{"type":"string","required":true},"digits":{"type":"integer","required":false,"min":6,"max":8,"default":6},"period":{"type":"integer","required":false,"min":1,"max":300,"default":30}};
+        this.validationRules = {"secret":{"type":"string","required":true},"digits":{"type":"integer","required":false,"min":6,"max":8,"default":6},"period":{"type":"integer","required":false,"min":1,"max":300,"default":30},"algorithm":{"type":"string","required":false,"default":"SHA1"},"time":{"type":"integer","required":false,"min":0}};
     }
 
     /**

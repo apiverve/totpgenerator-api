@@ -30,6 +30,7 @@ declare module '@apiverve/totpgenerator' {
       period:        number | null;
       timeRemaining: number | null;
       expiresAt:     Date | null;
+      algorithm:     null | string;
   }
 
   export default class totpgeneratorWrapper {
