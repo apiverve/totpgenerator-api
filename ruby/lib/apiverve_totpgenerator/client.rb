@@ -19,7 +19,7 @@ module APIVerve
       DEFAULT_TIMEOUT = 30
 
       # Validation rules for parameters
-      VALIDATION_RULES = { 'secret' => { type: 'string', required: true }, 'digits' => { type: 'integer', required: false, min: 6, max: 8 }, 'period' => { type: 'integer', required: false, min: 1, max: 300 } }
+      VALIDATION_RULES = { 'secret' => { type: 'string', required: true }, 'digits' => { type: 'integer', required: false, min: 6, max: 8 }, 'period' => { type: 'integer', required: false, min: 1, max: 300 }, 'algorithm' => { type: 'string', required: false }, 'time' => { type: 'integer', required: false, min: 0 } }
 
       # Format validation patterns
       FORMAT_PATTERNS = {
