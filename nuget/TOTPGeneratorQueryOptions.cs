@@ -27,5 +27,17 @@ namespace APIVerve.API.TOTPGenerator
         /// </summary>
         [JsonProperty("period")]
         public int? Period { get; set; }
+
+        /// <summary>
+        /// HMAC algorithm: SHA1 (default, what most authenticator apps use), SHA256 or SHA512
+        /// </summary>
+        [JsonProperty("algorithm")]
+        public string Algorithm { get; set; }
+
+        /// <summary>
+        /// Unix time in seconds to use instead of now
+        /// </summary>
+        [JsonProperty("time")]
+        public int? Time { get; set; }
     }
 }

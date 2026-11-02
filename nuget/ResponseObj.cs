@@ -46,6 +46,9 @@ namespace APIVerve.API.TOTPGenerator
 
         [JsonProperty("expiresAt")]
         public DateTimeOffset? ExpiresAt { get; set; }
+
+        [JsonProperty("algorithm")]
+        public string Algorithm { get; set; }
     }
 
     public partial class Premium

@@ -69,7 +69,9 @@ namespace APIVerve.API.TOTPGenerator
         {
             { "secret", new ValidationRule { Type = "string", Required = true } },
             { "digits", new ValidationRule { Type = "integer", Required = false, Min = 6, Max = 8 } },
-            { "period", new ValidationRule { Type = "integer", Required = false, Min = 1, Max = 300 } }
+            { "period", new ValidationRule { Type = "integer", Required = false, Min = 1, Max = 300 } },
+            { "algorithm", new ValidationRule { Type = "string", Required = false } },
+            { "time", new ValidationRule { Type = "integer", Required = false, Min = 0 } }
         };
 
         /// <summary>Format validation patterns</summary>
