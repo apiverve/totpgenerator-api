@@ -43,11 +43,12 @@ paths:
                 status: ok
                 error: null
                 data:
-                  token: '935324'
+                  token: '260025'
                   digits: 6
                   period: 30
                   timeRemaining: 25
-                  expiresAt: '2025-12-16T22:31:00Z'
+                  expiresAt: '2026-01-01T00:00:30.000Z'
+                  algorithm: SHA1
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
@@ -70,6 +71,14 @@ paths:
                 period:
                   type: integer
                   description: Time period in seconds
+                algorithm:
+                  type: string
+                  description: >-
+                    HMAC algorithm: SHA1 (default, what most authenticator apps
+                    use), SHA256 or SHA512
+                time:
+                  type: integer
+                  description: Unix time in seconds to use instead of now
               required:
                 - secret
 components:

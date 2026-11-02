@@ -221,11 +221,12 @@ A real response from the TOTP Generator API:
   "status": "ok",
   "error": null,
   "data": {
-    "token": "935324",
+    "token": "260025",
     "digits": 6,
     "period": 30,
     "timeRemaining": 25,
-    "expiresAt": "2025-12-16T22:31:00Z"
+    "expiresAt": "2026-01-01T00:00:30.000Z",
+    "algorithm": "SHA1"
   }
 }
 ```
